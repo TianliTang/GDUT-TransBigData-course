@@ -1,0 +1,12 @@
+# 《交通大数据分析与应用》课堂Notebook直接依赖
+# 已用Python 3.12.10执行验证
+jupyterlab==4.5.4
+ipykernel==7.3.0
+nbformat==5.11.0
+nbclient==0.11.0
+numpy==2.3.5
+pandas==2.2.3
+scipy==1.18.0
+scikit-learn==1.9.0
+statsmodels==0.14.5
+matplotlib==3.11.1

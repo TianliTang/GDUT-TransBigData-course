@@ -1,0 +1,16 @@
+文件,字段,数据类型,单位,数据粒度,含义,质量与使用说明
+pems_bay_speed.csv.gz,timestamp,datetime,当地时间标签,时间点,5分钟观测时间,无时区偏移；2017-03-12 02:00至02:55缺12个标签
+pems_bay_speed.csv.gz,检测站编号列,float,mph,检测站×时间点,该站5分钟平均速度,共有325列；0值须作为质量候选核查
+stations.csv,sensor_order,int,无,检测站,速度矩阵中的列序号,从0开始；与主数据列顺序一致
+stations.csv,sensor_id,string,无,检测站,检测站编号,不要转成浮点数；与主数据列名连接
+stations.csv,latitude,float,十进制度,检测站,站点纬度,WGS84点位；不代表道路方向
+stations.csv,longitude,float,十进制度,检测站,站点经度,WGS84点位；不代表道路方向
+sensor_distances.csv.gz,from_sensor_id,string,无,有向站点对,起点检测站编号,与to方向不可随意互换
+sensor_distances.csv.gz,to_sensor_id,string,无,有向站点对,终点检测站编号,不是完整两两距离矩阵
+sensor_distances.csv.gz,distance,float,原始值,有向站点对,原始仓库提供的站点间距离,数量级与米一致但上游未明确单位；主要用于相对距离和图连接
+known_data_issues.csv,issue_type,string,无,质量问题记录,问题类型,timestamp_gap或zero_speed_candidate
+known_data_issues.csv,timestamp_start,datetime,当地时间标签,质量问题记录,问题开始时间,0值记录的开始与结束相同
+known_data_issues.csv,timestamp_end,datetime,当地时间标签,质量问题记录,问题结束时间,全网时间缺口覆盖02:00至02:55
+known_data_issues.csv,sensor_id,string,无,质量问题记录,受影响站点,ALL表示全体站点
+known_data_issues.csv,record_count,int,条,质量问题记录,涉及记录数,用于核对而非直接修复
+known_data_issues.csv,note,string,无,质量问题记录,课程处理提示,仍需在报告中说明本组规则
